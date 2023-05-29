@@ -1,0 +1,629 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- SEO tags -->
+	<title>The MetaBody | NFT Avatars</title>
+	<meta name="description" content="Make your custom avatar for the future of Metaverse">
+	<meta property="og:title" content="The MetaBody | NFT Avatars">
+
+	<!-- GENERATE FAVICON: https://realfavicongenerator.net/ -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+	<!-- <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#44ddff">
+	<link rel="shortcut icon" href="/img/favicons/favicon.ico"> -->
+	<meta name="msapplication-TileColor" content="#000000">
+<!-- 	<meta name="msapplication-config" content="img/favicons/browserconfig.xml"> -->
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+	<!-- Main styles -->
+    <link rel="stylesheet" href="css/main.css?v=1.8.0">
+
+</head>
+<body>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JJZJSPXFWH"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-JJZJSPXFWH');
+	</script>
+
+	<!-- Meta Pixel Code -->
+	<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '3108934002682417');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3108934002682417&ev=PageView&noscript=1"/></noscript>
+	<!-- End Meta Pixel Code -->
+
+
+
+<div class="header-fixed">
+<nav class="navbar" >
+    <a href="/" class="navbar__brand">
+        <img src="img/logo.svg" alt="">
+    </a>
+    <!-- /.navbar__brand -->
+    <div class="menu-top-wrap">
+        <ul class="menu-top" id="onePgaeNav">
+                  <li><a class="scroll" href="#about">About</a></li>
+                  <li><a class="scroll"  href="#creation">Creation process</a></li>
+                  <li><a class="scroll"  href="#gallery">Gallery</a></li>
+                  
+                  <li><a class="scroll"  href="#partners">Partners</a></li>
+                  <li><a class="scroll"  href="#contact">Contact us</a></li>
+        </ul>
+
+        <ul class="socials navbar__socials">
+     <!--        <li>
+                <a href="https://discord.gg/themetabody" target="_blank" class="socials__link socials__link_lighting">
+                    <i class="icon-discord"></i>
+                </a>
+            </li> -->
+            <li>
+                <a href="https://instagram.com/themetabody.io/" target="_blank" class="socials__link">
+                    <img src="img/inst.svg" class="instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/TheMetaBody" target="_blank" class="socials__link">
+                    <img src="img/twiiter.svg">
+                </a>
+            </li>
+        </ul>
+    </div>    
+    <!-- /.socials -->
+</nav>
+</div>
+
+<script src="js/jquery.2.2.3.min.js"></script>
+
+<!-- /.navbar -->
+<script type="text/javascript">
+    $( document ).ready(function(){
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 1){
+        $('.header-fixed').addClass("sticky");
+        }
+        else{
+        $('.header-fixed').removeClass("sticky");
+        }
+      });
+    });  
+  </script>
+<script type="text/javascript">
+
+     $( document ).ready(function(){
+        jQuery('.scroll').onePgaeNav({
+          wrapper : '#onePgaeNav'
+        });
+      });  
+
+    (function( $ ) {
+    
+    $.fn.onePgaeNav = function( options ){
+
+        var settings = $.extend({
+            activeClass     : 'active',
+            wrapper         : '',       // Nav wrapper selector for scroll effect
+            speed           : 900,      // animation speed
+            navStop         : 100,      // stop before top
+            navStart        : 200,      // change class before navstart pixel
+
+        }, options ),
+        $that = $(this);
+
+        $(this).on( 'click' , clickScroll );
+
+        if (settings.wrapper) {
+            $(window).on('scroll',function(){
+                var sectionTop  = [],
+                windowTop   = $(window).scrollTop();
+
+                $that.each(function(){
+                    var hash = $(this).attr('href'),
+                        hashOffset = $( hash ).offset();
+                    if (typeof hashOffset !== 'undefined' ) {
+                        sectionTop.push( hashOffset.top);
+                    };
+                });
+
+                $.each( sectionTop, function(index){
+                    if ( windowTop > sectionTop[index] - settings.navStart ){
+                        $that.removeClass(settings.activeClass)
+                            .eq(index).addClass(settings.activeClass);
+                    }
+                });
+            });
+        };
+
+        function clickScroll(event){
+            event.preventDefault();
+
+            var hash        = $(this).attr('href'),
+                hashOffset  = $(hash).offset(),
+                hashTop     = hashOffset.top;
+
+            $('html, body').animate({
+                scrollTop: hashTop - settings.navStop
+            }, settings.speed);
+        }
+
+    };
+
+    }(jQuery));
+    </script>
+
+<div id="content" class="">
+<header id="welcome" class="header jarallax-header" >
+    <div class="container">
+
+
+        <div class="header__left">
+            <h1 class="header__title">Be <br>Whoever</h1>
+            <h3 class="header__subtitle">Make your custom avatar <br>for the future of Metaverse</h3>
+
+            <a href=" https://t.me/lukeevanstmb" class="btn btn_animated header__btn" target="_blank">
+                <!-- <img src="img/loader.svg" alt="" class="btn__loader"> -->
+
+                <span>contact us</span>
+            </a>
+        </div>
+
+
+
+        <!-- /.header__left -->
+
+     <!--    <div class="header__right">
+            <div class="header__right-text">
+                <i class="icon-arrow-down-left"></i>
+                <span>- Hello, My name <br>is Anelie. and i am <br>from the future</span>
+            </div>
+        
+
+
+
+            <a href="#" class="btn btn_disabled btn_animated header__right-btn">
+          
+                <i class="icon-discord"></i>
+                <span>Join to discord</span>
+            </a>
+        </div> -->
+        <!-- /.header__right -->
+    </div>
+    <!-- /.container -->
+
+    <img src="img/header-avatar.png" alt="" class="header__avatar">
+</header>
+<!-- /#welcome.header -->
+
+<!-- 
+<div class="runner-line js-marquee">
+    <div class="runner-line__wrap runner-line__wrap_v2">
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+        <span class="runner-line__text">SALE STARTS <span>SOON</span></span>
+    </div>
+</div> -->
+<!-- /.runner-line -->
+
+<div id="about"> 
+<section id="sec_1" class="section">
+    <div class="container">
+        <div class="sec-1">
+            <h2 class="sec-1__title"><span>Get ready - </span>the future is near.</h2>
+
+            <span class="sec-1__link">
+                <img src="img/arrow.svg">
+                <span>About</span>
+            </span>
+            <!-- /.sec-1__link -->
+
+            <p class="text sec-1__text">New entertainment reality is almost conventional. Digital events, metaverses and virtual influencers are increasingly common in our everyday life.
+The MetaBody is a full-cycle CGI studio that creates ultra quality Avatars, clothes and environments.
+Avatars can be used as virtual influencers, brand ambassadors, metaverse characters and many more ways.</p>
+
+            <div class="sec-1__video">
+                <video id="videoCapsule" class="sec-1__video-main" autoplay="true" muted="muted" loop="true" playsinline preload>
+                    
+                    <source src="img/capsule-video.mp4" type="video/mp4">
+                    <!--<source src="/img/capsule-video.ogv" type="video/ogg">-->
+                    Sorry, your browser doesn't support embedded videos
+                </video>
+            </div>
+            <!-- /.sec-1__video -->
+        </div>
+        <!-- /.sec-1 -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /#sec_1.section -->
+</div>
+
+<div id="creation">
+<aside id="creation_process">
+    <div class="container">
+        <div class="poster-v2" style="background-image: url('img/posters/3-bg.png');">
+            <h2 class="poster-v2__title"><span>Creation </span>process</h2>
+            <a href="https://themetabody.io/process.html" class="btn poster-v2__btn">Take a look</a>
+
+            <img src="img/posters/3.png" alt="" class="poster-v2__img">
+            <img src="img/posters/3-mobile.png" alt="" class="poster-v2__img poster-v2__img_mobile">
+        </div>
+        <!-- /.poster-v2 -->
+    </div>
+    <!-- /.container -->
+</aside>
+<!-- /#creation_process -->
+</div>
+
+
+<!-- /#sec_3.section -->
+
+<div id="gallery">
+<section id="sec_4 Gallery" class="section section_h-auto parallax">
+    <div class="container">
+        <div class="sec-4">
+
+            <div class="sec-4__gallery">
+                <h2 class="section__title sec-4__gallery-title">Gallery</h2>
+
+                <ul class="sec-4__gallery-list">
+                    <li>
+                        <button class="sec-4__gallery-list-item" data-gallery-target="frank">
+                            <img src="img/gallery/drafts/frank/frank.png" alt="">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sec-4__gallery-list-item sec-4__gallery-list-item_selected" data-gallery-target="anelie">
+                            <img src="img/anelie.png" alt="">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sec-4__gallery-list-item" data-gallery-target="sasha">
+                            <img src="img/sasha.png" alt="">
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sec-4__gallery-list-item" data-gallery-target="coco">
+                            <img src="img/coco.png" alt="">
+                        </button>
+                    </li>
+                </ul>
+                <!-- /.sec-4__gallery-list -->
+
+                <div class="sec-4__gallery-details">
+
+                    <div class="sec-4__gallery-details-item" data-gallery-detail="frank">
+                        <h3 class="sec-4__gallery-details-item-title">Frank - Pilot</h3>
+                        <p class="text sec-4__gallery-details-item-text">Frank Cooper was a test pilot until he suffered a severe cerebellar injury. After 2 years of rehabilitation, he was still barely able to lift his hand with a glass of water. But scientists from the Institute of augmentation offered him to volunteer in a scientific experiment. Cranial implants not only restored the functioning of the brain, but also endowed Frank with extraordinary abilities. Perfect spatial orientation, 100% peripheral vision, improved coordination and agility. All this makes Mr. Cooper the perfect pilot.</p>
+                    </div>
+                    <!-- /.sec-4__gallery-details-item -->
+
+                    <div class="sec-4__gallery-details-item sec-4__gallery-details-item_active" data-gallery-detail="anelie">
+                        <h3 class="sec-4__gallery-details-item-title">Aneli — navigator</h3>
+                        <p class="text sec-4__gallery-details-item-text">Reckless and impulsive - first she does, and then she thinks. But thanks to her determination, the crew more than once escaped from unexpected collisions, be it a meteorite or intergalactic criminals. Passed on the rights of category α-Centauri from the fifth time because of the explosive nature. She despises boredom, so she is always up to cause some chaos for fun.</p>
+                    </div>
+                    <!-- /.sec-4__gallery-details-item -->
+
+                    <div class="sec-4__gallery-details-item" data-gallery-detail="sasha">
+                        <h3 class="sec-4__gallery-details-item-title">Sasha — engineer</h3>
+                        <p class="text sec-4__gallery-details-item-text">Don't be misled by her apearence. Sasha knows how every mechanism in the galaxy works. So busy with development that even Elon Musk can hardly get her personal advice on his next project. An absolute layman in everyday matters, so the ship has all the possible types of gadgets invented by Sasha, from a blanket tucker in a sleep capsule to an android cook who obeys the power of the owner’s thought. She spends all his free time on self-improvement, yoga and meditation.</p>
+                    </div>
+                    <!-- /.sec-4__gallery-details-item -->
+
+                    <div class="sec-4__gallery-details-item" data-gallery-detail="coco">
+                        <h3 class="sec-4__gallery-details-item-title">Coco - Geneticist</h3>
+                        <p class="text sec-4__gallery-details-item-text">She implanted herself with a super learning gene and now an iQ of 300 points is not the limit. Coco believes that there is an opportunity to solve the issue of time, so she is waiting for the evening when personal participation in the Darwin scientific survey is possible. Kind and caring, she will always support any crew member and find an individual approach to them.Very organized, but overly concerned with order and cleanliness.</p>
+                    </div>
+                    <!-- /.sec-4__gallery-details-item -->
+
+                </div>
+                <!-- /.sec-4__gallery-details -->
+
+               
+            </div>
+            <!-- /.sec-4__gallery -->
+
+            <div class="sec-4__pics">
+
+                <div class="sec-4__pics-item sec-4__pics-item_frank" data-gallery-pic="frank">
+                    <img src="img/gallery/drafts/frank/frank-all.png" alt="" class="sec-4__pics-item-img">
+                </div>
+                <!-- /.sec-4__pics-item -->
+
+                <div class="sec-4__pics-item sec-4__pics-item_anelie sec-4__pics-item_active" data-gallery-pic="anelie">
+                    <img src="img/gallery/drafts/anelie/anelie-all.png" alt="" class="sec-4__pics-item-img">
+                </div>
+                <!-- /.sec-4__pics-item -->
+
+                <div class="sec-4__pics-item sec-4__pics-item_sasha" data-gallery-pic="sasha">
+                    <img src="img/gallery/drafts/sasha/sasha-all.png" alt="" class="sec-4__pics-item-img">
+                </div>
+                <!-- /.sec-4__pics-item -->
+
+                <div class="sec-4__pics-item sec-4__pics-item_coco" data-gallery-pic="coco">
+                    <img src="img/gallery/drafts/coco/coco-all.png" alt="" class="sec-4__pics-item-img">
+                </div>
+                <!-- /.sec-4__pics-item -->
+
+            </div>
+            <!-- /.sec-4__pics -->
+
+        </div>
+        <!-- /.sec-4 -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /#sec_4.section section_h-auto -->
+</div>
+<div id="shots">
+<section id="sec_5" class="section section_h-auto">
+    <div class="shots">
+        <div class="container container-sm-middle">
+
+            <img src="img/swipe.svg" alt="" class="swipe-indicator" style="padding-top: 70px;">
+        </div>
+        <!-- /.container container-sm-middle -->
+        <h2 class="section__title shots__title">Shots</h2>
+        <div id="shots" class="shots__photos">
+            <div class="swiper-container swiper-shots">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/1.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/2.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/3.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/4.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/5.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/6.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/7.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/8.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/9.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/10.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/11.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/12.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/13.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/14.jpg" alt="" class="shots__photo"></button></div>
+                    <div class="swiper-slide"><button class="shots__item"><img src="img/gallery/medium/15.jpg" alt="" class="shots__photo"></button></div>
+                </div>
+                <!-- /.swiper-wrapper -->
+            </div>
+            <!-- /.swiper-container -->
+        </div>
+        <!-- /.shots__photos -->
+
+        <div class="drag"></div>
+    </div>
+    <!-- /.shots -->
+</section>
+<!-- /#sec_5.section section_h-auto -->
+</div>
+
+
+
+
+
+
+
+<!-- 
+<div class="runner-line js-marquee">
+    <div class="runner-line__wrap">
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+        <span class="runner-line__text">GET YOUR <span>AVATAR</span></span>
+    </div>
+</div> -->
+<!-- /.runner-line -->
+
+
+
+<div id="partners">
+
+<section id="info_partners Partners" class="section section_h-auto sec-9">
+    <div class="container">
+
+        <h2 class="section__title section__title--sm section__title--centered sec-9__title">Information partners</h2>
+
+        <div class="partners">
+            <div class="partners__wrap">
+                <a href="https://coinmarketcap.com/headlines/news/the-ultra-quality-of-avatars-for-the-metaverses-has-become-a-reality/" target="_blank" class="partners__item">
+                    <img src="img/partners/coinmarketcap.svg" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+
+                <a href="https://0xzx.com/2022022702312119811.html" target="_blank" class="partners__item">
+                    <img src="img/partners/2.png" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+
+                <a href="https://cryptonews.net/es/news/metaverse/3208765/" target="_blank" class="partners__item">
+                    <img src="img/partners/cnews.svg" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+
+                <a href="https://www.newsbtc.com/news/company/the-ultra-quality-of-avatars-for-the-metaverses-has-become-a-reality/" target="_blank" class="partners__item">
+                    <img src="img/partners/newsbtc.png" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+
+                <a href="https://finance.yahoo.com/news/metaverses-heading-full-character-customization-184800369.html" target="_blank" class="partners__item">
+                    <img src="img/partners/yahoo-finance.svg" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+
+                <a href="https://www.benzinga.com/amp/content/25998046" target="_blank" class="partners__item">
+                    <img src="img/partners/benzinga.svg" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+
+                <a href="https://www.wallstreet-online.de/_amp/nachricht/15140990-metaverses-heading-for-full-character-customization-with-metabody" target="_blank" class="partners__item">
+                    <img src="img/partners/metaverses.svg" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+
+                <a href="https://londondailypost.com/what-is-the-meta-body/" target="_blank" class="partners__item">
+                    <img src="img/partners/londondaily.png" alt="" class="partners__item-logo">
+                </a>
+                <!-- /.partners__item -->
+            </div>
+            <!-- /.partners__wrap -->
+        </div>
+        <!-- /.partners -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /#info_partners.section section_h-auto -->
+</div>
+<div id="contact">
+<aside id="join_us" >
+    <div class="container">
+        <a href="https://t.me/lukeevanstmb" class="join-us" target="_blank">
+     
+            <span class="contact-us"><span class="join-us_outline">CONTACT</span> US</span>
+         
+    <video class="section__video-bg" autoplay="true" muted="muted" loop="true" playsinline="" preload="">
+
+        <source src="img/Trailer.mp4" type="video/mp4">
+
+
+    </video>    
+        </a>
+        <!-- /#join_us.join-us -->
+    </div>
+    <!-- /.container -->
+</aside>
+<!-- /#join_us -->
+</div>
+
+
+		<footer class="footer" >
+			<div class="container">
+				<a href="/" class="footer__brand">
+					<img src="img/footer-brand.svg" alt="">
+				</a>
+				<h2 class="footer__title">We are the meta body</h2>
+				<h6 class="footer__subtitle">Be Whoever - Make your custom avatar for the future of Metaverse</h6>
+
+				<ul class="socials navbar__socials">
+				<!-- 	<li>
+						<a href="https://discord.gg/themetabody" class="socials__link socials__link_xs-big socials__link_lighting" target="_blank">
+							<i class="icon-discord"></i>
+						</a>
+					</li> -->
+					<li>
+						<a href="https://instagram.com/themetabody.io/" class="socials__link socials__link_xs-big" target="_blank">
+							<img src="img/inst.svg" class="instagram">
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/TheMetaBody" class="socials__link socials__link_xs-big" target="_blank">
+							<img src="img/twiiter.svg">
+						</a>
+					</li>
+				</ul>
+				<!-- /.socials -->
+			</div>
+			<!-- /.container -->
+		</footer>
+		<!-- /.footer -->
+
+	<!-- /.content -->
+    </div>
+
+	<div id="popup" class="popup">
+		<div class="popup__window">
+			<div class="popup__window-wrap">
+				<div class="popup__item">
+					<div>
+						<h3 class="popup__item-title">A-pass</h3>
+						<h5 class="popup__item-subtitle">will be converted into:</h5>
+
+						<ul class="popup__item-list">
+							<li>Custom Avatar NFT made according to your vision</li>
+							<li>Ready-to-use models, including .obj, .blend .fbx, .MA, .glb, Unreal Engine, Daz3D</li>
+							<li>Additional file formats upon request</li>
+							<li>12 R-tokens that could be exchanged for visual renders of your Custom Avatar in desired surroundings for use in Social Media</li>
+							<li>6 W-tokens that could be exchanged for the upcoming MetaBody Wearables</li>
+							<li>1 S-token that could be exchanged for the upcoming  MetaBody Space</li>
+						</ul>
+					</div>
+
+					<span class="popup__item-loading">Available soon</span>
+				</div>
+				<!-- /.popup__item -->
+
+				<button class="popup__window-close popup-close"><i class="icon-close"></i></button>
+
+				<div class="popup__item">
+					<div>
+						<h3 class="popup__item-title">G-pass</h3>
+						<h5 class="popup__item-subtitle">will be converted into:</h5>
+
+						<ul class="popup__item-list">
+							<li>Random Generative Avatar NFT</li>
+							<li>Ready-to-use models, including .obj, .blend .fbx, .MA, .glb, Unreal Engine, Daz3D</li>
+							<li>Additional file formats upon request</li>
+							<li>1 S-token that could be exchanged for the upcoming  MetaBody Space</li>
+						</ul>
+					</div>
+
+					<span class="popup__item-loading">Available soon</span>
+				</div>
+				<!-- /.popup__item -->
+			</div>
+			<!-- /.popup__window-wrap -->
+		</div>
+		<!-- /.popup__window -->
+
+		<div class="popup__overlay popup-close"></div>
+	</div>
+	<!-- /#popup.popup -->
+   
+	<script src="js/app.min.js?v=1.8.0"></script>
+    
+
+    
+
+</body>
+</html>
+
